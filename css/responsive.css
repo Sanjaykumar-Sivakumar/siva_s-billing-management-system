@@ -1,0 +1,77 @@
+/* ============================================================
+   responsive.css — Tablet & Mobile breakpoints
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .bill-layout { grid-template-columns: 1fr; }
+  .bill-summary { position: static; }
+  .dash-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); width: 260px; }
+  .sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lift); }
+  .main-wrap { margin-left: 0; }
+  #menuToggle { display: block; }
+  .stat-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  #mainContent { padding: 16px; }
+  .page-header { flex-direction: column; align-items: flex-start; }
+  .page-header-actions { width: 100%; }
+  .page-header-actions .btn { flex: 1; }
+  .form-row { grid-template-columns: 1fr; }
+  .quick-actions { grid-template-columns: repeat(2, 1fr); }
+  .topbar { padding: 0 14px; }
+  .topbar-left h3 { display: none; }
+  .modal-box { padding: 18px; }
+  .add-row { flex-direction: column; }
+  .search-row { flex-direction: column; }
+  .history-summary { gap: 12px; }
+  .stat-card { padding: 14px; }
+  .stat-value { font-size: 17px; }
+  .inv-header { flex-direction: column; }
+  .inv-meta { text-align: left; }
+}
+
+@media print {
+  .sidebar, .topbar, #toastContainer, .modal-actions { display: none !important; }
+  body { background: #fff; }
+}
+
+/* Final responsive hardening */
+@media (max-width: 900px){
+  .topbar{padding:0 18px}
+  .topbar-right{gap:6px}
+  #mainContent{max-width:100%;}
+  .bill-summary{width:100%;}
+}
+@media (max-width: 640px){
+  #mainContent{padding:14px}
+  .card{padding:16px;border-radius:16px}
+  .page-header h1{font-size:21px}
+  .page-header-actions{display:grid;grid-template-columns:1fr;}
+  .page-header-actions .btn{width:100%}
+  .form-row{gap:0}
+  .btn-lg{padding:12px 18px}
+  .stat-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .stat-card{min-height:100px;padding:14px;gap:10px}
+  .stat-icon{width:42px;height:42px;font-size:19px;border-radius:12px}
+  .stat-label{font-size:11px}
+  .stat-value{font-size:16px}
+  .data-table{min-width:620px}
+  .table-wrap{-webkit-overflow-scrolling:touch}
+  .search-row .input{max-width:none!important}
+  .login-box{padding:32px 20px 24px;border-radius:22px}
+  .login-box h3{font-size:17px}
+  .login-orb-1{width:250px;height:250px}
+  .login-orb-2{width:220px;height:220px}
+}
+@media (max-width:420px){
+  .stat-grid{grid-template-columns:1fr}
+  .topbar{height:62px}
+  .icon-btn{width:36px;height:36px;font-size:16px}
+  .topbar-left{gap:8px}
+  .topbar-left img{width:30px;height:30px}
+}
